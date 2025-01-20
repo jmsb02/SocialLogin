@@ -1,0 +1,77 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+
+### yml ###
+.yml
+
+### properties ###
+.properties
+
+# Maven/Gradle dependencies
+target/
+
+.settings/
+.gradle/
+mvnw
+mvnw.cmd
+
+# Logs
+logs/
+*.log
+
+# IDE/Editor settings
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.classpath
+*.project
+*.settings/
+
+# Local environment files
+.env
+*.properties
+*.yml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
