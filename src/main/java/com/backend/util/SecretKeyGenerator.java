@@ -1,4 +1,4 @@
-package com.backend.etc;
+package com.backend.util;
 
 import java.security.SecureRandom;
 import java.util.Base64;

@@ -1,12 +1,14 @@
 package com.backend.config;
 
 import com.backend.filter.JwtAuthenticationFilter;
-import com.backend.handler.JwtAuthenticationSuccessHandler;
+import com.backend.apiPayLoad.exception.handler.JwtAuthenticationSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -22,11 +24,16 @@ public class SecurityConfig {
     }
 
     @Bean
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 비활성화
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/oauth2/**", "/login/**", "/").permitAll()
+                        .requestMatchers("/oauth2/**", "/login/**", "/", "/auth/login/kakao/**").permitAll()
                         .requestMatchers("/api/protected").authenticated() // 인증이 필요한 경로
                         .anyRequest().authenticated()
                 )

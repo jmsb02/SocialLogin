@@ -1,4 +1,4 @@
-package com.backend.handler;
+package com.backend.apiPayLoad.exception.handler;
 
 import com.backend.util.JwtUtil;
 import jakarta.servlet.FilterChain;

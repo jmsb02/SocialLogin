@@ -34,4 +34,8 @@ public class JwtUtil {
                 .signWith(signingKey, SignatureAlgorithm.HS256) // Key 객체와 함께 서명
                 .compact();
     }
+
+    public String createAccessToken(String email, String string) {
+        return "hi";
+    }
 }
