@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import LoginPage from '../components/LoginPage.vue';
+// import LoginPage from '../components/LoginPage.vue';
 
 const routes = [
-    { path: '/', component: LoginPage },
+    // { path: '/login', component: LoginPage },
+    { path: '/', redirect: '/login'}
 ];
 
 const router = createRouter({
