@@ -35,7 +35,13 @@ public class JwtUtil {
                 .compact();
     }
 
-    public String createAccessToken(String email, String string) {
-        return "hi";
+    public String createAccessToken(String email, String role) {
+        return Jwts.builder()
+                .setSubject(email)
+                .claim("role", role)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 3600000)) // 1시간 유효
+                .signWith(SignatureAlgorithm.HS256, secretKey) // 비밀키 확인
+                .compact();
     }
 }

@@ -26,7 +26,6 @@ import java.util.Arrays;
 public class KakaoUtil {
 
     private final ObjectMapper objectMapper;
-    private KakaoDTO.KakaoProfile kakaoProfile;
 
 
     @Value("${spring.security.oauth2.client.registration.kakao.client-id}")
@@ -43,7 +42,7 @@ public class KakaoUtil {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("grant_type", "authorization_code");
         params.add("client_id", clientId);
-        params.add("redirect_url", redirectUri);
+        params.add("redirect_uri", redirectUri);
         params.add("code", accessCode);
 
         HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
@@ -55,7 +54,7 @@ public class KakaoUtil {
                 String.class);
         ObjectMapper objectMapper = new ObjectMapper();
 
-        KakaoDTO.OAuthToken oAuthToken = null;
+        KakaoDTO.OAuthToken oAuthToken;
 
         try {
             oAuthToken = objectMapper.readValue(response.getBody(), KakaoDTO.OAuthToken.class);
@@ -80,6 +79,7 @@ public class KakaoUtil {
                 HttpMethod.GET,
                 kakaoProfileRequest,
                 String.class);
+        KakaoDTO.KakaoProfile kakaoProfile;
         try {
             kakaoProfile = objectMapper.readValue(response2.getBody(), KakaoDTO.KakaoProfile.class);
         } catch (JsonProcessingException e) {

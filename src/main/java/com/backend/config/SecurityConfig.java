@@ -33,7 +33,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 비활성화
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/oauth2/**", "/login/**", "/", "/auth/login/kakao/**").permitAll()
+                        .requestMatchers("/oauth2/**", "/login/**", "/").permitAll()
                         .requestMatchers("/api/protected").authenticated() // 인증이 필요한 경로
                         .anyRequest().authenticated()
                 )
@@ -43,7 +43,6 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // JwtAuthenticationFilter 추가
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // 세션 비활성화
-
         return http.build();
     }
 }

@@ -2,7 +2,9 @@ package com.backend.web.dto;
 
 import lombok.Getter;
 
+
 public class KakaoDTO {
+
 
     @Getter
     public static class OAuthToken {
