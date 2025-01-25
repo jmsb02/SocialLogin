@@ -76,3 +76,17 @@ Thumbs.db
 *.tmp
 *.swp
 
+# gradle
+.gradle/
+build/
+gradle/wrapper/gradle-wrapper.jar
+
+
+
+# etc
+.DS_Store          # macOS
+Thumbs.db          # Windows
+*.iml              # IntelliJ IDEA
+.idea/             # IntelliJ IDEA 프로젝트 설정
+.vscode/           # VSCode 프로젝트 설정
+*.log              # 로그 파일
