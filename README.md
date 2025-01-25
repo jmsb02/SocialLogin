@@ -7,5 +7,8 @@ Vue.js와 Spring boot로 JWT + OAuth2 (구글, 깃허브, 카카오 소셜 로�
 ---
 
 [JWT+OAuth2] Spring Security를 활용한 **Google**, **GitHub** 로그인 구현 
-링크 : https://velog.io/@jaemm/JWTOAuth2-%EA%B5%AC%EA%B8%80-%EA%B9%83%ED%97%88%EB%B8%8C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84
+링크 : [구글, 깃허브 로그인 구현 Velog 링크](https://velog.io/@jaemm/JWTOAuth2-%EA%B5%AC%EA%B8%80-%EA%B9%83%ED%97%88%EB%B8%8C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84)
 
+
+[JWT+OAuth2] Spring Security를 활용한 **Kakao** 로그인 구현 
+링크 : [카카오 로그인 구현 Velog 링크](https://velog.io/@jaemm/JWTOAuth2-Spring-Security%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Kakao-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84)
